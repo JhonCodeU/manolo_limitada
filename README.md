@@ -85,7 +85,3 @@ Sigue estos pasos para configurar y ejecutar el proyecto:
 ¡Listo! Ahora puedes utilizar la interfaz web para gestionar los contactos de Manolo Limitada.
 
 ```
-
-Recuerda reemplazar `tu_usuario` y `tu_repositorio` con tu información real del repositorio en GitHub, y ajustar las configuraciones del archivo `.env` según tu entorno de desarrollo y base de datos.
-
-Espero que esto te ayude a crear un README.md informativo para tu proyecto. ¡Buena suerte con tu desarrollo!

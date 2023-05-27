@@ -15,7 +15,6 @@
 
     <div class="py-12">
 
-        {{-- alert --}}
         @include('alerts.flash')
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -77,7 +76,7 @@
                                         <form action="{{ route('contacts.destroy', $contact) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit"
+                                            <button type="submit" onclick="return confirmDelete(event)"
                                                 class="text-red-600 hover:text-red-900">Delete</button>
                                         </form>
                                     </td>
@@ -91,3 +90,10 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    function confirmDelete(event) {
+        if (!confirm('¿Estás seguro de eliminar este contacto?')) {
+            event.preventDefault();
+        }
+    }
+</script>
