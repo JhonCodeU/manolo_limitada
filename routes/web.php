@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -11,18 +12,19 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('register');
 });
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
 ])->group(function () {
+    Route::resource('contacts', ContactController::class);
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return redirect()->route('contacts.index');
     })->name('dashboard');
 });
